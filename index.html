@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQCMS - Intelligent Quality Control Management System</title>
+    <meta name="description" content="A comprehensive laptop repair and quality control management system built with React, Node.js, and MongoDB">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-laptop-code"></i>
+                <span>IQCMS</span>
+            </div>
+            <div class="nav-links">
+                <a href="#overview" class="nav-link">Overview</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#core-features" class="nav-link">Capabilities</a>
+                <a href="#tech" class="nav-link">Tech Stack</a>
+                <a href="#impact" class="nav-link">Impact</a>
+                <a href="#gallery" class="nav-link">Gallery</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-rocket"></i>
+                    <span>Enterprise Solution</span>
+                </div>
+                <h1 class="hero-title">
+                    Intelligent Quality Control 
+                    <span class="gradient-text">Management System</span>
+                </h1>
+                <p class="hero-description">
+                    A comprehensive laptop repair and quality control management system that streamlines operations 
+                    across multiple user roles with real-time tracking, inventory management, and automated workflows.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">User Roles</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Features</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Responsive</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#features" class="btn btn-primary">
+                        <i class="fas fa-eye"></i>
+                        Explore Features
+                    </a>
+                    <a href="#gallery" class="btn btn-secondary">
+                        <i class="fas fa-images"></i>
+                        View Gallery
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-preview">
+                    <div class="dashboard-header">
+                        <div class="dashboard-logo">
+                            <i class="fas fa-laptop"></i>
+                            <span>IQCMS Admin</span>
+                        </div>
+                        <div class="dashboard-stats">
+                            <div class="stat-card">
+                                <span class="stat-value">247</span>
+                                <span class="stat-label">Total Laptops</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-value">₹2.4M</span>
+                                <span class="stat-label">Revenue</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard-tabs">
+                        <div class="tab active">Overview</div>
+                        <div class="tab">Inventory</div>
+                        <div class="tab">Users</div>
+                        <div class="tab">Reports</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Comprehensive Role-Based System</h2>
+                <p class="section-description">
+                    Tailored dashboards and workflows for different user types, ensuring optimal efficiency and user experience.
+                </p>
+            </div>
+            
+            <!-- Feature Carousel -->
+            <div class="feature-carousel">
+                <div class="carousel-container">
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Admin Dashboard Feature -->
+                        <div class="feature-slide active">
+                            <div class="feature-content">
+                                <div class="feature-image">
+                                    <div class="image-placeholder admin">
+                                        <i class="fas fa-crown"></i>
+                                        <span>Admin Dashboard Screenshot</span>
+                                    </div>
+                                </div>
+                                <div class="feature-details">
+                                    <div class="feature-badge admin">Admin</div>
+                                    <h3 class="feature-title">Admin Dashboard</h3>
+                                    <p class="feature-description">
+                                        Complete system oversight with user management, inventory control, and comprehensive reporting.
+                                    </p>
+                                    <div class="feature-highlights">
+                                        <div class="highlight-item">
+                                            <i class="fas fa-users"></i>
+                                            <span>User Management & Role Assignment</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-chart-bar"></i>
+                                            <span>Real-time Analytics & KPIs</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-warehouse"></i>
+                                            <span>Inventory Oversight</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-file-export"></i>
+                                            <span>Financial Reporting & Data Export</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Engineer Workflow Feature -->
+                        <div class="feature-slide">
+                            <div class="feature-content">
+                                <div class="feature-image">
+                                    <div class="image-placeholder engineer">
+                                        <i class="fas fa-tools"></i>
+                                        <span>Engineer Dashboard Screenshot</span>
+                                    </div>
+                                </div>
+                                <div class="feature-details">
+                                    <div class="feature-badge engineer">Engineer</div>
+                                    <h3 class="feature-title">Engineer Workflow</h3>
+                                    <p class="feature-description">
+                                        Streamlined laptop entry, quality control, and repair management with detailed tracking.
+                                    </p>
+                                    <div class="feature-highlights">
+                                        <div class="highlight-item">
+                                            <i class="fas fa-laptop"></i>
+                                            <span>Laptop Entry & Documentation</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-clipboard-check"></i>
+                                            <span>Quality Control Checklists</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-wrench"></i>
+                                            <span>Repair Management & Tracking</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-box"></i>
+                                            <span>Parts Request System</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Manager Control Feature -->
+                        <div class="feature-slide">
+                            <div class="feature-content">
+                                <div class="feature-image">
+                                    <div class="image-placeholder manager">
+                                        <i class="fas fa-clipboard-list"></i>
+                                        <span>Manager Dashboard Screenshot</span>
+                                    </div>
+                                </div>
+                                <div class="feature-details">
+                                    <div class="feature-badge manager">Manager</div>
+                                    <h3 class="feature-title">Manager Control</h3>
+                                    <p class="feature-description">
+                                        Inventory management and part request approval with comprehensive oversight capabilities.
+                                    </p>
+                                    <div class="feature-highlights">
+                                        <div class="highlight-item">
+                                            <i class="fas fa-warehouse"></i>
+                                            <span>Real-time Inventory Management</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Part Request Approval</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-chart-line"></i>
+                                            <span>Cost Analysis & Monitoring</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-users-cog"></i>
+                                            <span>Team Performance Oversight</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sales Dashboard Feature -->
+                        <div class="feature-slide">
+                            <div class="feature-content">
+                                <div class="feature-image">
+                                    <div class="image-placeholder sales">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>Sales Dashboard Screenshot</span>
+                                    </div>
+                                </div>
+                                <div class="feature-details">
+                                    <div class="feature-badge sales">Sales</div>
+                                    <h3 class="feature-title">Sales Dashboard</h3>
+                                    <p class="feature-description">
+                                        Sales tracking, inventory visibility, and warranty management for optimal customer service.
+                                    </p>
+                                    <div class="feature-highlights">
+                                        <div class="highlight-item">
+                                            <i class="fas fa-shopping-cart"></i>
+                                            <span>Available Inventory Browsing</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-trophy"></i>
+                                            <span>Sales Performance Tracking</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <span>Warranty Management</span>
+                                        </div>
+                                        <div class="highlight-item">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <span>Dynamic Pricing Tools</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carousel Navigation -->
+                <div class="carousel-nav">
+                    <button class="nav-btn prev" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="carousel-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                    <button class="nav-btn next" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section class="core-features" id="core-features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Core System Capabilities</h2>
+                <p class="section-description">
+                    Advanced features that power the entire laptop repair and quality control workflow.
+                </p>
+            </div>
+            
+            <div class="core-features-grid">
+                <div class="core-feature-card">
+                    <div class="core-feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="core-feature-title">Real-time Data Sync</h3>
+                    <p class="core-feature-description">
+                        Live updates across all user roles ensure everyone has access to the latest information instantly.
+                    </p>
+                    <div class="core-feature-highlights">
+                        <span class="highlight">Live Updates</span>
+                        <span class="highlight">Instant Sync</span>
+                        <span class="highlight">No Delays</span>
+                    </div>
+                </div>
+
+                <div class="core-feature-card">
+                    <div class="core-feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="core-feature-title">Role-based Security</h3>
+                    <p class="core-feature-description">
+                        Granular permission system ensures users only access features relevant to their role and responsibilities.
+                    </p>
+                    <div class="core-feature-highlights">
+                        <span class="highlight">JWT Authentication</span>
+                        <span class="highlight">Permission Control</span>
+                        <span class="highlight">Secure Access</span>
+                    </div>
+                </div>
+
+                <div class="core-feature-card">
+                    <div class="core-feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="core-feature-title">Advanced Analytics</h3>
+                    <p class="core-feature-description">
+                        Comprehensive reporting and analytics provide insights into performance, profitability, and operational efficiency.
+                    </p>
+                    <div class="core-feature-highlights">
+                        <span class="highlight">Performance Metrics</span>
+                        <span class="highlight">Revenue Tracking</span>
+                        <span class="highlight">Trend Analysis</span>
+                    </div>
+                </div>
+
+                <div class="core-feature-card">
+                    <div class="core-feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="core-feature-title">Mobile Responsive</h3>
+                    <p class="core-feature-description">
+                        Fully responsive design ensures optimal experience across all devices, from mobile phones to desktop computers.
+                    </p>
+                    <div class="core-feature-highlights">
+                        <span class="highlight">Mobile First</span>
+                        <span class="highlight">Touch Optimized</span>
+                        <span class="highlight">Cross Platform</span>
+                    </div>
+                </div>
+
+                <div class="core-feature-card">
+                    <div class="core-feature-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <h3 class="core-feature-title">Data Export</h3>
+                    <p class="core-feature-description">
+                        Export data in multiple formats for external analysis, reporting, and integration with other business systems.
+                    </p>
+                    <div class="core-feature-highlights">
+                        <span class="highlight">CSV Export</span>
+                        <span class="highlight">Custom Reports</span>
+                        <span class="highlight">Data Integration</span>
+                    </div>
+                </div>
+
+                <div class="core-feature-card">
+                    <div class="core-feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="core-feature-title">Workflow Automation</h3>
+                    <p class="core-feature-description">
+                        Automated workflows streamline processes from laptop entry to final sale, reducing manual work and errors.
+                    </p>
+                    <div class="core-feature-highlights">
+                        <span class="highlight">Auto Notifications</span>
+                        <span class="highlight">Status Updates</span>
+                        <span class="highlight">Process Flow</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack" id="tech">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Modern Technology Stack</h2>
+                <p class="section-description">
+                    Built with cutting-edge technologies for scalability, performance, and maintainability.
+                </p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Frontend</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-react"></i>
+                            <span>React 19</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>JavaScript ES6+</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Tailwind CSS</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-route"></i>
+                            <span>React Router</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Backend</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-server"></i>
+                            <span>Express.js</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-key"></i>
+                            <span>JWT Authentication</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3 class="tech-category-title">Tools & Libraries</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Responsive Design</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Role-based Security</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-file-csv"></i>
+                            <span>CSV Export</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Real-time Analytics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Impact Section -->
+    <section class="impact" id="impact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Business Impact & Solutions</h2>
+                <p class="section-description">
+                    Addressing real-world challenges in laptop repair and quality control management.
+                </p>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="impact-title">Time Efficiency</h3>
+                    <p class="impact-description">
+                        Reduced manual tracking time by 70% through automated workflows and real-time status updates.
+                    </p>
+                    <div class="impact-metric">
+                        <span class="metric-value">70%</span>
+                        <span class="metric-label">Time Saved</span>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="impact-title">Revenue Tracking</h3>
+                    <p class="impact-description">
+                        Comprehensive sales analytics and revenue tracking with automated reporting and insights.
+                    </p>
+                    <div class="impact-metric">
+                        <span class="metric-value">100%</span>
+                        <span class="metric-label">Revenue Visibility</span>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="impact-title">Role Management</h3>
+                    <p class="impact-description">
+                        Streamlined user management with role-based access control and permission management.
+                    </p>
+                    <div class="impact-metric">
+                        <span class="metric-value">4</span>
+                        <span class="metric-label">User Roles</span>
+                    </div>
+                </div>
+
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="impact-title">Quality Control</h3>
+                    <p class="impact-description">
+                        Standardized quality control processes with digital checklists and approval workflows.
+                    </p>
+                    <div class="impact-metric">
+                        <span class="metric-value">95%</span>
+                        <span class="metric-label">QC Accuracy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">System Screenshots</h2>
+                <p class="section-description">
+                    Explore the intuitive interfaces and powerful features of the IQCMS system.
+                </p>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="gallery-title">Admin Dashboard</h3>
+                    <p class="gallery-description">Comprehensive system overview with real-time metrics and analytics</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="gallery-title">Engineer Interface</h3>
+                    <p class="gallery-description">Streamlined laptop entry and quality control workflows</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="gallery-title">Inventory Management</h3>
+                    <p class="gallery-description">Real-time inventory tracking and part request management</p>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="gallery-image">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="gallery-title">Analytics & Reports</h3>
+                    <p class="gallery-description">Detailed reporting and performance analytics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>IQCMS</span>
+                </div>
+                <p class="footer-description">
+                    Intelligent Quality Control Management System - Streamlining laptop repair operations with modern technology.
+                </p>
+                <div class="footer-links">
+                    <a href="#overview">Overview</a>
+                    <a href="#features">Features</a>
+                    <a href="#tech">Technology</a>
+                    <a href="#impact">Impact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IQCMS. Built with modern web technologies.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
