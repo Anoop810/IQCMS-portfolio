@@ -25,44 +25,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Removed scroll detection for static navigation
 
-    // Intersection Observer for animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.feature-card, .core-feature-card, .tech-category, .impact-card, .gallery-item');
-    animateElements.forEach(el => {
-        observer.observe(el);
-    });
-
-    // Add CSS for animations
+    // Add CSS for mobile navigation
     const style = document.createElement('style');
     style.textContent = `
-        .feature-card,
-        .core-feature-card,
-        .tech-category,
-        .impact-card,
-        .gallery-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .animate-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
         .nav-links.active {
             display: flex;
             flex-direction: column;
@@ -143,22 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
         statsObserver.observe(statsSection);
     }
 
-    // Parallax effect for hero section
-   
-
-    // Throttled parallax
-    let parallaxTicking = false;
-    function updateParallaxThrottled() {
-        if (!parallaxTicking) {
-            requestAnimationFrame(function() {
-                updateParallax();
-                parallaxTicking = false;
-            });
-            parallaxTicking = true;
-        }
-    }
-
-    window.addEventListener('scroll', updateParallaxThrottled);
 
     // Add loading animation
     window.addEventListener('load', function() {
