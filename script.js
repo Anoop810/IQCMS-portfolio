@@ -179,15 +179,67 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(loadingStyle);
 
-    // Feature card hover effects
+    // Feature card interactive effects
     const featureCards = document.querySelectorAll('.feature-card');
     featureCards.forEach(card => {
+        // Enhanced hover effects
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.style.boxShadow = 'var(--shadow-xl)';
+            
+            // Animate highlight items
+            const highlightItems = this.querySelectorAll('.highlight-item');
+            highlightItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.transform = 'translateX(8px)';
+                    item.style.background = 'var(--gray-800)';
+                    item.style.color = 'var(--white)';
+                    item.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+                }, index * 100);
+            });
         });
         
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = 'var(--shadow-xl)';
+            
+            // Reset highlight items
+            const highlightItems = this.querySelectorAll('.highlight-item');
+            highlightItems.forEach(item => {
+                item.style.transform = 'translateX(0)';
+                item.style.background = 'var(--gray-50)';
+                item.style.color = 'var(--gray-700)';
+                item.style.boxShadow = 'none';
+            });
+        });
+
+        // Click ripple effect
+        card.addEventListener('click', function(e) {
+            createRipple(e, this);
+            
+            // Add a subtle bounce effect
+            this.style.transform = 'translateY(-4px) scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            }, 150);
+        });
+
+        // Focus effects for accessibility
+        card.addEventListener('focus', function() {
+            this.style.outline = '2px solid var(--primary-color)';
+            this.style.outlineOffset = '2px';
+        });
+
+        card.addEventListener('blur', function() {
+            this.style.outline = 'none';
+        });
+
+        // Keyboard navigation
+        card.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                createRipple(e, this);
+            }
         });
     });
 
@@ -215,24 +267,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add ripple effect to buttons
-    function createRipple(event) {
-        const button = event.currentTarget;
+    // Add ripple effect to buttons and feature cards
+    function createRipple(event, element = null) {
+        const target = element || event.currentTarget;
         const circle = document.createElement('span');
-        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const diameter = Math.max(target.clientWidth, target.clientHeight);
         const radius = diameter / 2;
 
         circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+        circle.style.left = `${event.clientX - target.offsetLeft - radius}px`;
+        circle.style.top = `${event.clientY - target.offsetTop - radius}px`;
         circle.classList.add('ripple');
 
-        const ripple = button.getElementsByClassName('ripple')[0];
+        const ripple = target.getElementsByClassName('ripple')[0];
         if (ripple) {
             ripple.remove();
         }
 
-        button.appendChild(circle);
+        target.appendChild(circle);
     }
 
     const buttons = document.querySelectorAll('.btn');
@@ -243,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Add ripple styles
     const rippleStyle = document.createElement('style');
     rippleStyle.textContent = `
-        .btn {
+        .btn, .feature-card {
             position: relative;
             overflow: hidden;
         }
@@ -251,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .ripple {
             position: absolute;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.1);
             transform: scale(0);
             animation: ripple 0.6s linear;
             pointer-events: none;
@@ -266,92 +318,6 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(rippleStyle);
 
-    // Feature Carousel Functionality
-    const carouselTrack = document.getElementById('carouselTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dots = document.querySelectorAll('.dot');
-    const slides = document.querySelectorAll('.feature-slide');
-    
-    let currentSlide = 0;
-    const totalSlides = slides.length;
-    
-    function showSlide(index) {
-        // Remove active class from all slides and dots
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Add active class to current slide and dot
-        slides[index].classList.add('active');
-        dots[index].classList.add('active');
-        
-        // Update button states
-        prevBtn.disabled = index === 0;
-        nextBtn.disabled = index === totalSlides - 1;
-    }
-    
-    function nextSlide() {
-        if (currentSlide < totalSlides - 1) {
-            currentSlide++;
-            showSlide(currentSlide);
-        }
-    }
-    
-    function prevSlide() {
-        if (currentSlide > 0) {
-            currentSlide--;
-            showSlide(currentSlide);
-        }
-    }
-    
-    // Event listeners
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    
-    // Dot navigation
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
-            showSlide(currentSlide);
-        });
-    });
-    
-    // Keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') prevSlide();
-        if (e.key === 'ArrowRight') nextSlide();
-    });
-    
-    // Auto-play carousel (optional)
-    let autoPlayInterval;
-    
-    function startAutoPlay() {
-        autoPlayInterval = setInterval(() => {
-            if (currentSlide < totalSlides - 1) {
-                nextSlide();
-            } else {
-                currentSlide = 0;
-                showSlide(currentSlide);
-            }
-        }, 5000); // Change slide every 5 seconds
-    }
-    
-    function stopAutoPlay() {
-        clearInterval(autoPlayInterval);
-    }
-    
-    // Start auto-play
-    startAutoPlay();
-    
-    // Pause auto-play on hover
-    const carousel = document.querySelector('.feature-carousel');
-    if (carousel) {
-        carousel.addEventListener('mouseenter', stopAutoPlay);
-        carousel.addEventListener('mouseleave', startAutoPlay);
-    }
-    
-    // Initialize carousel
-    showSlide(0);
 
     // Console welcome message
     console.log('%c🚀 IQCMS Portfolio', 'color: #2563eb; font-size: 20px; font-weight: bold;');
