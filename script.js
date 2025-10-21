@@ -72,41 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Counter animation for stats
-    function animateCounters() {
-        const counters = document.querySelectorAll('.stat-number, .metric-value');
-        
-        counters.forEach(counter => {
-            const target = parseInt(counter.textContent.replace(/[^\d]/g, ''));
-            const suffix = counter.textContent.replace(/[\d]/g, '');
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    counter.textContent = target + suffix;
-                    clearInterval(timer);
-                } else {
-                    counter.textContent = Math.floor(current) + suffix;
-                }
-            }, 30);
-        });
-    }
-
-    // Trigger counter animation when stats section is visible
-    const statsSection = document.querySelector('.hero-stats');
-    if (statsSection) {
-        const statsObserver = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        statsObserver.observe(statsSection);
-    }
 
 
     // Add loading animation
