@@ -6,26 +6,26 @@
 }
 
 :root {
-    --primary-color: #000000;
-    --primary-dark: #1a1a1a;
-    --secondary-color: #666666;
-    --accent-color: #333333;
-    --success-color: #000000;
-    --danger-color: #000000;
-    --warning-color: #333333;
-    --dark-color: #000000;
-    --light-color: #fafafa;
+    --primary-color: #3b82f6;
+    --primary-dark: #1e40af;
+    --secondary-color: #6366f1;
+    --accent-color: #f59e0b;
+    --success-color: #10b981;
+    --danger-color: #ef4444;
+    --warning-color: #f59e0b;
+    --dark-color: #1f2937;
+    --light-color: #f8fafc;
     --white: #ffffff;
-    --gray-50: #fafafa;
-    --gray-100: #f5f5f5;
-    --gray-200: #e5e5e5;
-    --gray-300: #d4d4d4;
-    --gray-400: #a3a3a3;
-    --gray-500: #737373;
-    --gray-600: #525252;
-    --gray-700: #404040;
-    --gray-800: #262626;
-    --gray-900: #171717;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
     
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.08);
@@ -148,11 +148,12 @@ body {
 /* Hero Section */
 .hero {
     padding: 8rem 0 4rem;
-    background: linear-gradient(135deg, var(--white) 0%, var(--gray-50) 100%);
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
     position: relative;
+    color: white;
 }
 
 .hero::before {
@@ -162,7 +163,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 30% 20%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
     pointer-events: none;
 }
 
@@ -180,25 +181,26 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--primary-color);
-    color: var(--white);
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+    color: white;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
     font-size: 0.875rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.1;
-    color: var(--gray-900);
+    color: white;
     margin-bottom: 1.5rem;
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--primary-color), var(--gray-600));
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -212,13 +214,13 @@ body {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(135deg, var(--primary-color), var(--gray-600));
-    opacity: 0.3;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    opacity: 0.8;
 }
 
 .hero-description {
     font-size: 1.25rem;
-    color: var(--gray-600);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
     line-height: 1.7;
 }
@@ -798,7 +800,7 @@ body {
 /* Business Gap Analysis Section */
 .business-gap {
     padding: 4rem 0;
-    background: var(--white);
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
     position: relative;
 }
 
@@ -813,11 +815,18 @@ body {
 .gap-card {
     background: var(--white);
     border: 2px solid var(--gray-200);
-    border-radius: 8px;
+    border-radius: 12px;
     position: relative;
     overflow: hidden;
     page-break-inside: avoid;
     margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.gap-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .gap-header {
@@ -826,13 +835,13 @@ body {
     align-items: center;
     gap: 1rem;
     border-bottom: 2px solid var(--gray-200);
-    background: var(--gray-50);
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
 }
 
 .gap-icon {
     width: 3rem;
     height: 3rem;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -840,6 +849,7 @@ body {
     font-size: 1.25rem;
     color: var(--white);
     flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .gap-title {
@@ -873,15 +883,17 @@ body {
 }
 
 .problem-header {
-    background: #fef2f2;
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
     color: #dc2626;
     border-color: #fecaca;
+    box-shadow: 0 2px 4px rgba(220, 38, 38, 0.1);
 }
 
 .solution-header {
-    background: #f0fdf4;
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
     color: #16a34a;
     border-color: #bbf7d0;
+    box-shadow: 0 2px 4px rgba(22, 163, 74, 0.1);
 }
 
 .problem-header i, .solution-header i {
@@ -904,13 +916,37 @@ body {
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
-    padding: 0.5rem 0;
+    padding: 0.75rem 1rem;
     line-height: 1.5;
-    border-bottom: 1px solid var(--gray-100);
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.problem-item {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2);
+    border-left: 4px solid var(--danger-color);
+}
+
+.problem-item:hover {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+}
+
+.solution-item {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border-left: 4px solid var(--success-color);
+}
+
+.solution-item:hover {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(22, 163, 74, 0.1);
 }
 
 .problem-item:last-child, .solution-item:last-child {
-    border-bottom: none;
+    margin-bottom: 0;
 }
 
 .problem-item i, .solution-item i {
